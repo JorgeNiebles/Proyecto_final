@@ -12,6 +12,10 @@ app.get('/', (req, res) => {
     res.sendFile(_dirname + '/public/index.html');
 });
 
+app.get('/contactanos', (req, res) => {
+    res.sendFile(_dirname + '/public/contactanos.html');
+});
+
 //iniciar server
 app.listen(PORT, () => {
     console.log(`servidor iniciado en el puerto:${PORT}`);
