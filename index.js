@@ -1,24 +1,7 @@
-const express = require('express');
+const { app, PORT } = require('./config');
+require('./app');
 
-const app = express();
-
-const PORT = process.env.PORT || 3000;
-
-//resolver las rutas statics
-app.use(express.static("public"));
-
-//rutas de la url
-app.get('/', (req, res) => {
-    res.sendFile(_dirname + '/public/index.html');
-});
-
-app.get('/contactanos', (req, res) => {
-    res.sendFile(_dirname + '/public/contactanos.html');
-});
-
-//iniciar server
+//Inicio server
 app.listen(PORT, () => {
-    console.log(`servidor iniciado en el puerto:${PORT}`);
+    console.log(`Servidor iniciado en el puerto:${PORT}`);
 });
-
-
